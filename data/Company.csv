@@ -1,47 +1,312 @@
-Company_ID,Location,Name,Type
-01HQSF3HE735NYXMMF8P342E6T,3 Morningstar Crossing,Skyndu
-01HQSF3HE7BFVW5G7FTRPYCPPD,14 Larry Crossing,Brainbox
-01HQSF3HE7HVGEV8MWDNR9D7YQ,734 Sloan Place,Gabcube
-01HQSF3HE8NH4YYAPK2WZQ8ZEM,93710 Dovetail Way,Geba
-01HQSF3HE8D5A288CKDZ5CBK05,3267 Alpine Pass,Katz
-01HQSF3HE82WBJVMKAVJ6Q7DXS,30 Onsgard Pass,Avavee
-01HQSF3HE9VT5B1GE1EB33EANA,1 Walton Court,Yakidoo
-01HQSF3HE9J9HB659PHBKB1CC2,71 American Terrace,Wikizz
-01HQSF3HE9BRSCSWJM9EDENREN,38087 Golf Course Way,Skiba
-01HQSF3HEAAF1FRKHJQHQPBM3K,1 Kim Center,Oozz
-01HQSF3HEAAQ2027HTP5KQ040K,461 1st Way,Devbug
-01HQSF3HEATQ5JG77MDMW3VD49,10793 Burning Wood Plaza,Edgetag
-01HQSF3HEBQ8YTAW4N47DREHEB,4615 Thompson Way,Muxo
-01HQSF3HEB7TZHZEFM83YBGSS5,4313 Donald Place,Skyble
-01HQSF3HEBN4T1TRSSN1CW81HF,15 Caliangt Trail,Blogpad
-01HQSF3HEBECFJMM8BKSKPAYGA,180 Fallview Street,Skivee
-01HQSF3HEBF1MEW2BE8XTA7TY6,749 Farwell Trail,Edgeclub
-01HQSF3HEB4WTA0CXWS442K4EB,97204 Eagan Way,Skinte
-01HQSF3HECEAAMVRQDRPYCBNXM,73587 Caliangt Court,Mycat
-01HQSF3HEC3RS60QWHH7JX71PK,41142 Glendale Circle,Meezzy
-01HQSF3HECX5RN3R74Y5ZSP8TD,2565 Carpenter Place,Tambee
-01HQSF3HECPBW3XX8WQCGCHF8H,156 Tennyson Drive,Ooba
-01HQSF3HEDE7EKP5GYC8B489V4,09 East Avenue,Kwilith
-01HQSF3HEDD5KK6RJD81ZWRH5B,6 Harper Pass,InnoZ
-01HQSF3HED0QVVJTB8JC9FGTX4,751 Carioca Way,Shufflester
-01HQSF3HEE3JRDB9YKVN1BYETY,3 Buena Vista Court,Photobean
-01HQSF3HEEQQMQFVKBTWY8AQ4P,108 Arapahoe Trail,Jabbertype
-01HQSF3HEEQBTMB8X71XKKMYJP,1 Quincy Trail,Jabberstorm
-01HQSF3HEFCS3KR2C3525GAAZ0,46 Stang Drive,Roomm
-01HQSF3HEFQX4ZA3J3Y27WCB2Q,40137 Quincy Parkway,Avamm
-01HQSF3HEG11WX301GKV85M61J,64349 Warbler Point,Wordpedia
-01HQSF3HEGX6MX42P6YX5R4JXC,20 Brown Center,Flashset
-01HQSF3HEG56ES80M4K8PMAXBH,265 Cherokee Road,Zooxo
-01HQSF3HEHZS56RNCB1TZ02ZRE,27 Haas Road,Meevee
-01HQSF3HEH521376011FZWX4ZJ,13 Laurel Hill,Kwimbee
-01HQSF3HEH9N1KQBKR32BC287V,7 Schiller Avenue,Youtags
-01HQSF3HEJTT2AFRN7MVA76HM1,1 Di Loreto Plaza,Feedbug
-01HQSF3HEJF3M7C44EYM03JT43,33 Comanche Lane,Skimia
-01HQSF3HEJ0V3DDMH4CW46PSXH,7428 Clove Drive,Aimbu
-01HQSF3HEJV0TCT0X2Y7RH5EQC,876 Oxford Lane,Gabvine
-01HQSF3HEJPD9C9E854V64A2Z3,46 Erie Circle,Topicware
-01HQSF3HEJQ9QYVJ24E5DKB67K,7 Myrtle Pass,Mybuzz
-01HQSF3HEK828MTAWXBSTNAQ1T,768 Thackeray Pass,Brainlounge
-01HQSF3HEKYXPZ7TDER11TP0AK,6210 Upham Road,Livefish
-01HQSF3HEKQDV6V7YX4WYMRGQ5,61027 Westend Place,Tagtune
-01HQSF3HEK5NPYQH6KNHBGWZ1W,52090 Redwing Drive,Eimbee
+Company_ID,Address,Name,Type
+01HQXAVCMWEXEJYR1CVK9QPZQ7,"414 Havey Hill, New York, New York 10003",Altera Digital Health,Private Corporation
+01HQXAVCMXRWCNSE1XGC88Z5KR,"8989 Swallow Plaza, Chicago, Illinois 60018", Scale AI ,Private Corporation
+01HQXAVCMXTRC4Y81YV23C1ZQ8,"4778 Sage Lane, Chicago, Illinois 60007",Voya Financial,Private Corporation
+01HQXAVCMXCRNPED9KR90QAGJN,"42 Corben Road, San Francisco, California 94107",Formlabs,Private Corporation
+01HQXAVCMXJ11TZ0EJQNZST6SP,"3 Sycamore Parkway, Austin, Texas 778613", Tenstorrent ,Private Corporation
+01HQXAVCMXW24XS7Y1GWDA5KXM,"5 Warner Place, Boston, Massachusetts 02111",Western Digital,Private Corporation
+01HQXAVCMYGC67QD7VVVTWSG8Z,"86589 Anzinger Way, San Francisco, California 94103", Hello Fresh ,Private Corporation
+01HQXAVCMYMC7111V1RS8T3JBF,"3718 Hansons Place, San Francisco, California 94107",Pinterest,Private Corporation
+01HQXAVCMYVW26KJFWGFEP0HP7,"306 Merrick Drive, New York, New York 10001",Jamf,Private Corporation
+01HQXAVCMYPH56E9NTCZFHRVCY,"2274 School Junction, Los Angeles, California 90003",Affinitiv,Private Corporation
+01HQXAVCMZWP3AR7WDCNQR8KSX,"49127 Welch Street, New York, New York 10002",Squarepoint Capital,Private Corporation
+01HQXAVCMZ9JVCFW7J3WXET937,"44 International Parkway, New York, New York 10003",Column,Private Corporation
+01HQXAVCMZ5QWT82TXMH57Y77A,"89088 Darwin Avenue, Los Angeles, California 90001", Jerry ,Private Corporation
+01HQXAVCMZCE30KFXA446FTTKN,"47 Tony Circle, Miami, Florida 33126", Visa ,Private Corporation
+01HQXAVCMZ595QCX4H1BGP13E9,"92967 Karstens Circle, Denver, Colorado 80019",pony.ai,Private Corporation
+01HQXAVCN0W99RMJMCYW6YEAQH,"508 Artisan Way, Seattle, Washington 98102",Acorns,Non-Profit Organization
+01HQXAVCN0GDDGKK6GH7W08JTJ,"93827 Hollow Ridge Hill, San Francisco, California 94107",Ample,Private Corporation
+01HQXAVCN09996V5Z9YWGVFQKE,"4 Starling Street, Los Angeles, California 90001", Gelber Group ,Private Corporation
+01HQXAVCN0BQ3YCWBRVKQTTP69,"47735 Browning Street, Miami, Florida 33101",Perpay,Private Corporation
+01HQXAVCN024KZC3110647MRAF,"85223 Shelley Way, Austin, Texas 73301", Similarweb ,Private Corporation
+01HQXAVCN0C53AX4ESG2RRYPGF,"75052 Ridgeway Parkway, Boston, Massachusetts 02111", Immuta ,Startup
+01HQXAVCN1YW764GN3WKHBNSME,"3 Spaight Lane, Miami, Florida 33109",Raptor Maps,Private Corporation
+01HQXAVCN1H6Y37RHNY7S932PK,"01814 Spaight Point, Boston, Massachusetts 02110",Acumen LLC,Non-Profit Organization
+01HQXAVCN1XAV86CA06SATT8X5,"86979 Elka Trail, Atlanta, Georgia 30301",Bank of Montreal (BMO),Private Corporation
+01HQXAVCN1FXQ33T0F8GFE3B27,"318 Oxford Parkway, Austin, Texas 73344",NVIDIA,Private Corporation
+01HQXAVCN13C9848XTXCNHZCC0,"026 Veith Drive, Miami, Florida 33126",Veracode,Startup
+01HQXAVCN2EXBMMNWDQ9SQHPGM,"7 Tomscot Pass, San Francisco, California 94102", Figma ,Private Corporation
+01HQXAVCN21VRNBC6EQ0708WBE,"5554 Sugar Point, Miami, Florida 33126",Caldera,Startup
+01HQXAVCN2ZQQYP6WYSZWQAX5J,"7 Forster Avenue, Denver, Colorado 80014",Seismic,Startup
+01HQXAVCN39QGVAHWQ3NPCKKGS,"25765 Monterey Way, Chicago, Illinois 60018",Hugging Face,Private Corporation
+01HQXAVCN3ZJYYNEYDE7T68E9V,"2267 Fallview Avenue, Tampa, Florida 33592",Skyways,Startup
+01HQXAVCN4QK4VW9PN5R2T4Y41,"8234 Northfield Crossing, San Francisco, California 94107", Palantir ,Private Corporation
+01HQXAVCN4GVN6280ECKYQV0YX,"330 Sullivan Junction, Dallas, Texas 75032", Qualtrics ,Startup
+01HQXAVCN47J7W4VJFTW7HKBJM,"5930 Sunfield Terrace, San Francisco, California 94102", CannonDesign ,Private Corporation
+01HQXAVCN5SV8N26BB1B1R88PD,"46 Golf Court, Tampa, Florida 33601", Boston Dynamics AI Institute ,Private Corporation
+01HQXAVCN5DD2HNFWSX4HSPFHJ,"59 Lakewood Gardens Place, San Francisco, California 94102",Palantir,Private Corporation
+01HQXAVCN5G2MXGRMQVBCY72CT,"87714 Ohio Road, Atlanta, Georgia 30301",Thumbtack,Private Corporation
+01HQXAVCN54XWNZJG1YJCVM203,"91520 Thierer Way, Denver, Colorado 80022",Osmo,Private Corporation
+01HQXAVCN54SXTWN8H7NYY4HH7,"251 Jana Junction, Dallas, Texas 75032",Lyft,Private Corporation
+01HQXAVCN6PHWQR8ARG7JKK53G,"9729 Lakeland Alley, Dallas, Texas 75032",Redwood Materials,Private Corporation
+01HQXAVCN6CE0AVPX2VBXKNW3H,"2 Monument Terrace, Seattle, Washington 98101",Moloco,Private Corporation
+01HQXAVCN6TNT0S3Y6Q7MMWC9J,"04 Rutledge Park, San Francisco, California 94103", CoreWeave ,Private Corporation
+01HQXAVCN6CMR2Z0M4TEGN1W2N,"4908 Farmco Trail, Denver, Colorado 80022",Snowflake,Private Corporation
+01HQXAVCN6SVHCN92P2SYJ79ZT,"07698 Schurz Lane, Los Angeles, California 90003",Moveworks,Private Corporation
+01HQXAVCN6PT79B5WFSR57154F,"58 Thompson Junction, Atlanta, Georgia 30301", Pomelo ,Private Corporation
+01HQXAVCN76G8QZQGEP45F11VV,"50 Homewood Point, Tampa, Florida 33602",Q2,Private Corporation
+01HQXAVCN77W8CRFZN20S1VT39,"4 Valley Edge Circle, Miami, Florida 33126", Wisk ,Private Corporation
+01HQXAVCN7HH0WQZNJ0M6K1FGX,"64 Corscot Way, Tampa, Florida 33592",Astranis,Private Corporation
+01HQXAVCN7MH2XRPMJ7J64AE6E,"2619 Transport Crossing, Austin, Texas 778613",Empowerly,Private Corporation
+01HQXAVCN7R7A9GT0G1YFG0858,"74 Sunbrook Way, Los Angeles, California 90002", XTX Markets ,Private Corporation
+01HQXAVCN8VXP9C1V57PE1HPQR,"57 Nobel Way, New York, New York 10003",Pendo,Private Corporation
+01HQXAVCN8SC3GCMBTTCE1X11K,"4 Tony Street, Los Angeles, California 90002",Strata Decision Technology,Private Corporation
+01HQXAVCN8PRFC0FP0460P5J48,"634 Bay Drive, San Francisco, California 94107", Rocket Lab USA ,Private Corporation
+01HQXAVCN8WG9HC2P0XCDQVHC9,"57094 Knutson Center, Atlanta, Georgia 30033",Visa,Private Corporation
+01HQXAVCN8B3FSS586YXEC6EZT,"45 Evergreen Center, Chicago, Illinois 60007", Hudl ,Private Corporation
+01HQXAVCN96QD6TQE2J51R9P4S,"256 Pankratz Point, Austin, Texas 778613", Proprio ,Private Corporation
+01HQXAVCN9Z5ZETPW8DGZHB2JW,"32833 Cambridge Junction, Los Angeles, California 90002",Hitachi Vantara,Private Corporation
+01HQXAVCN9Z0ZM7XTT0EDHA622,"104 Colorado Lane, Austin, Texas 73344",Plexus,Startup
+01HQXAVCN9YNGM9T241BY051H0,"3 Northport Place, Los Angeles, California 90001",Salesforce,Startup
+01HQXAVCNAN7FTQ194K41A2SV3,"6407 Reinke Circle, Seattle, Washington 98101",Hatch IT,Private Corporation
+01HQXAVCNA49MTKQG8ED2MJ6EP,"6184 Northland Way, Los Angeles, California 90002",NewsBreak,Private Corporation
+01HQXAVCNAW7MHYE3VAJZDNKH5,"683 Clove Street, San Francisco, California 94102", Relativity Space ,Private Corporation
+01HQXAVCNB2XMFK196K91KCVPN,"47 Westridge Park, Austin, Texas 778613", Oscar Health ,Startup
+01HQXAVCNBA73FW6BSHF3NGMWK,"75 Loomis Street, New York, New York 10002",Perchwell,Private Corporation
+01HQXAVCNBKN0CBZQSF174MSQZ,"15 Moulton Hill, Seattle, Washington 98103",Leidos,Startup
+01HQXAVCNCFG2EM5M4HC7S7774,"3628 Corry Crossing, San Francisco, California 94107",Tegus,Private Corporation
+01HQXAVCNC1QSY9AEM7N66FACJ,"60176 Spohn Hill, New York, New York 10002",Old Mission,Private Corporation
+01HQXAVCNCKWMWY66H6THNB2MB,"45213 Stuart Court, Denver, Colorado 80022",Okta,Private Corporation
+01HQXAVCNDGJ9AM97KS2CJZ92E,"1 Everett Center, Tampa, Florida 33601",Point72,Private Corporation
+01HQXAVCNDJ589A2BEEAMPA3MB,"68 Union Pass, Miami, Florida 33109",Gametime,Private Corporation
+01HQXAVCNFS1Z7M9RFAF6SD3R6,"19 Crescent Oaks Center, Boston, Massachusetts 02110",Lacework,Private Corporation
+01HQXAVCNFA79230T33CZGFNKA,"055 Chinook Alley, New York, New York 10003", Trustpilot ,Private Corporation
+01HQXAVCNGPCBFB85646KACJH3,"666 Burning Wood Crossing, New York, New York 10002",IPG DXTRA,Private Corporation
+01HQXAVCNGVX2Z0DD0RR7E0R66,"3276 Muir Park, Seattle, Washington 98101", NimbleRx ,Private Corporation
+01HQXAVCNGHE2CJN1F3SNQGD6J,"736 Elgar Pass, Boston, Massachusetts 02111", Qumulo ,Private Corporation
+01HQXAVCNGM9EYJHASWAP97FE9,"77412 Bellgrove Court, San Francisco, California 94102", Matroid ,Private Corporation
+01HQXAVCNHKWA836HCKT03M1DG,"54080 Merchant Terrace, San Francisco, California 94103", Connectly ,Private Corporation
+01HQXAVCNH4XPTMR7FWMWTKCH3,"65 Gateway Center, Miami, Florida 33109",Red Door Interactive ,Private Corporation
+01HQXAVCNHN1C84AV0DEMCEB84,"513 West Hill, New York, New York 10001",OwnBackup,Private Corporation
+01HQXAVCNJ49RQAQHP03X2AWWZ,"2772 Eagle Crest Plaza, Chicago, Illinois 60018", Robert Half ,Private Corporation
+01HQXAVCNJJEC9KENS9JPXRJ4P,"6 Warner Park, Chicago, Illinois 60007",GRAIL,Private Corporation
+01HQXAVCNKDQFHKJR9FKMNGFEN,"94 Rutledge Street, Denver, Colorado 80019", Cummins ,Startup
+01HQXAVCNK5428N2BBA2V85D11,"507 Blue Bill Park Court, Miami, Florida 33126",ShyftLabs,Private Corporation
+01HQXAVCNK3AMWVBJ36V8EJGF0,"8828 Eagle Crest Terrace, Los Angeles, California 90001", Barkley ,Private Corporation
+01HQXAVCNK6RH7P5PG6EHZ8CWW,"078 Sundown Hill, Austin, Texas 73301",Akuna Capital,Private Corporation
+01HQXAVCNK7GVK0VTS2M2QRFNV,"99 Schurz Plaza, Tampa, Florida 33592", Budderfly ,Private Corporation
+01HQXAVCNM2MYJQA2C2BJXH320,"65395 Melby Park, Denver, Colorado 80022",Qualitest,Private Corporation
+01HQXAVCNMPWED9YTKW4AY3JD3,"29771 Fieldstone Drive, Denver, Colorado 80014",Bertram Capital Management,Startup
+01HQXAVCNM3GV2DG7YCG80KMA7,"4187 Twin Pines Avenue, Denver, Colorado 80022", CDC Foundation ,Private Corporation
+01HQXAVCNMW5W1CMW6FF41SPDY,"17 Harbort Road, Boston, Massachusetts 02111", Vanta ,Startup
+01HQXAVCNNXWVZYFC1Z843BJDD,"10785 Heath Street, Chicago, Illinois 60106", Tinder ,Startup
+01HQXAVCNN0KQNX7HPCNXSVEAQ,"0 Norway Maple Plaza, Seattle, Washington 98101", Applied Intuition ,Startup
+01HQXAVCNN54BCBJCZDD6DTQ2K,"421 Oakridge Hill, Los Angeles, California 90002", OneLocal ,Private Corporation
+01HQXAVCNPX1T3YH68DYTDCJ30,"9175 Fallview Center, Dallas, Texas 75032",Chime,Private Corporation
+01HQXAVCNP6SHKJ7AG9XJM8RZM,"4248 Macpherson Crossing, Chicago, Illinois 60018", Hex Technologies ,Private Corporation
+01HQXAVCNPY0PQJ9M34AQ2HP86,"902 Forster Point, San Francisco, California 94107",HPR (Hyannis Port Research),Private Corporation
+01HQXAVCNQNB2XT58CCHAV2DM2,"19405 Northport Way, Chicago, Illinois 60018",Guidewire,Private Corporation
+01HQXAVCNQ1VJT677XSWVZZCVS,"703 Havey Hill, Seattle, Washington 98103",Neuralink,Private Corporation
+01HQXAVCNQZ880JYV1M7KYMSNG,"35 Melvin Road, Seattle, Washington 98102",Parallel Wireless,Private Corporation
+01HQXAVCNQNPWT15WEQRMPCNW8,"6073 Stoughton Drive, Tampa, Florida 33601",Rockwell Automation,Private Corporation
+01HQXAVCNQ4EHDKR8C69FAQCJ5,"403 Meadow Valley Point, Denver, Colorado 80014", Rhombus Power ,Private Corporation
+01HQXAVCNR9S4QG0HWEAC6V3R3,"6574 Hovde Terrace, Dallas, Texas 75001",Relativity Space,Private Corporation
+01HQXAVCNREMQRDCANP5V9T40Y,"60 Bluestem Crossing, Denver, Colorado 80022", Forward ,Private Corporation
+01HQXAVCNS9HKVXZ2HC4MMANQN,"32 Bellgrove Avenue, San Francisco, California 94102", Appian ,Private Corporation
+01HQXAVCNSX1WM8CSXTNYWT6XW,"57893 Oxford Junction, Tampa, Florida 33602",CACI,Startup
+01HQXAVCNSMAYDDB7T5AS3WE1V,"269 Menomonie Trail, Seattle, Washington 98103",Cars Commerce,Non-Profit Organization
+01HQXAVCNT8CKV2TTQ01RFTVHV,"63446 Dunning Alley, Denver, Colorado 80014"," Persistent Systems, LLC ",Private Corporation
+01HQXAVCNT4E5PF5MEAMGBS8T5,"676 Pankratz Crossing, Boston, Massachusetts 02111", Zoom ,Private Corporation
+01HQXAVCNTQNZCXJ8GX3F27CTG,"0 Huxley Point, Tampa, Florida 33602",Arrowhead Pharmaceuticals,Private Corporation
+01HQXAVCNV20Q3F1XQZ7STGHZ0,"4 Rigney Way, Atlanta, Georgia 30301",Fastly,Private Corporation
+01HQXAVCNVX51TET3B8Y2E56AK,"8440 Bartillon Lane, Boston, Massachusetts 02111",Abnormal Security,Private Corporation
+01HQXAVCNWF1G87YQVG5JH5AV5,"88778 Twin Pines Point, Boston, Massachusetts 02110", theScore ,Startup
+01HQXAVCNW42KV3PGX3FW94Y2B,"6 Dottie Junction, Atlanta, Georgia 30303",The Boring Company,Private Corporation
+01HQXAVCNWJ7ZGCXFZNGJ9ZQ45,"8 Blue Bill Park Center, Seattle, Washington 98103", Pinterest ,Private Corporation
+01HQXAVCNW34J7WXJ18VDZW89S,"9 Anniversary Junction, Atlanta, Georgia 30303", Bloom Energy ,Private Corporation
+01HQXAVCNX82GGSTVNHY6F6RAG,"19298 Mandrake Terrace, San Francisco, California 94103", Cadence Design Systems ,Startup
+01HQXAVCNXNTF2X9CHFQ3WWKCY,"70076 Clyde Gallagher Alley, Austin, Texas 778613",Watershed,Private Corporation
+01HQXAVCNXKJP1XHXZEDG4AC35,"23843 Namekagon Alley, Tampa, Florida 33601",Matroid,Startup
+01HQXAVCNY1BESFJPS3VB6BB2A,"69311 Springs Center, Chicago, Illinois 60018", AnaVation LLC ,Private Corporation
+01HQXAVCNYESH7TPFTKHC6G9DP,"30288 Sugar Park, New York, New York 10002",Moxion Power,Private Corporation
+01HQXAVCNY246J86FB7RSWR6G3,"73 Warner Park, Dallas, Texas 75032", Okta ,Private Corporation
+01HQXAVCNZX3KR9SQADESDK20B,"63 Golden Leaf Alley, Denver, Colorado 80014",Precisely,Private Corporation
+01HQXAVCNZE42RENESBY9A3HNW,"64 Logan Alley, New York, New York 10003",Movable Ink,Private Corporation
+01HQXAVCP08MRH4R1PGJXKFTEP,"8 Jana Avenue, Seattle, Washington 98102",Rivian,Startup
+01HQXAVCP0DQPTCFMHX4QAZ2SE,"7 Delaware Pass, Boston, Massachusetts 02110",Quantcast,Private Corporation
+01HQXAVCP12S8P8EQ3KKHVKCN9,"81 Messerschmidt Alley, Tampa, Florida 33592", Weee! ,Private Corporation
+01HQXAVCP13JD5G0MMEWH4PAKM,"50010 Emmet Point, Denver, Colorado 80019",Intrinsic,Private Corporation
+01HQXAVCP1J91G20CKXB34WAW6,"931 Kings Terrace, Atlanta, Georgia 30303", Rockset ,Private Corporation
+01HQXAVCP216S8X1ZN9GC7KQPJ,"9 Nancy Place, San Francisco, California 94102", Duolingo ,Private Corporation
+01HQXAVCP20798F5K2HDR18XHW,"93 Homewood Junction, Miami, Florida 33126", ZipRecruiter ,Private Corporation
+01HQXAVCP3TY3761AEZR163Z4T,"90 Maple Drive, Denver, Colorado 80022",Cohere Health,Private Corporation
+01HQXAVCP352J4N10V5EPHAY74,"23577 Forest Dale Park, Boston, Massachusetts 02110", Marshall Wace ,Private Corporation
+01HQXAVCP39HW798T0DYXEDTG2,"089 Havey Circle, Seattle, Washington 98101", Evisort ,Private Corporation
+01HQXAVCP45FPVTM8ET30KC8E6,"0 Kensington Road, New York, New York 10002",Box,Private Corporation
+01HQXAVCP4D32ST9J51ANX2W0E,"64359 Tomscot Point, San Francisco, California 94103", Instacart ,Private Corporation
+01HQXAVCP4337KFDG9A3MVJ235,"420 Russell Street, Los Angeles, California 90003", Abnormal Security ,Private Corporation
+01HQXAVCP53N3E82CF5TPK5VE4,"92677 Buena Vista Park, Los Angeles, California 90001", Workato ,Private Corporation
+01HQXAVCP5YRQ291B75HVNX42S,"3035 Debra Circle, Denver, Colorado 80022",dunnhumby,Private Corporation
+01HQXAVCP5DV3BE7HG3C8VKDCY,"43157 Texas Circle, Tampa, Florida 33592",Kairos Power,Private Corporation
+01HQXAVCP6PN5BJ54Q5FHZ77VT,"66 Kensington Road, Tampa, Florida 33601",Interactive Brokers,Startup
+01HQXAVCP6CNA6P2JGVC63K80B,"0 Corry Plaza, Tampa, Florida 33601", Skydio ,Private Corporation
+01HQXAVCP6TM3T83QT1XTA7WXB,"54726 Fulton Place, Chicago, Illinois 60106",Minitab,Private Corporation
+01HQXAVCP7QBF9EX9HTX1R1R72,"838 Waywood Lane, Los Angeles, California 90001",Harbinger Motors,Private Corporation
+01HQXAVCP7R68RR0B5NDGPA5X3,"65267 Boyd Road, San Francisco, California 94107", Cantina ,Private Corporation
+01HQXAVCP75XNZBXBVHM4A8ZQJ,"1 Artisan Court, Chicago, Illinois 60106", Intuit ,Private Corporation
+01HQXAVCP75EDSTCFBKKHW4BQV,"74 Basil Junction, Miami, Florida 33126",Exiger,Private Corporation
+01HQXAVCP8KT10KZP6D3VXSZSY,"0 Lakewood Alley, Boston, Massachusetts 02108",PlusAI,Private Corporation
+01HQXAVCP8BF163E2H8ZR52EQT,"00 Fieldstone Circle, Boston, Massachusetts 02108", Loop ,Private Corporation
+01HQXAVCP82528FNJHH5C7W8Q8,"9524 Mesta Terrace, Los Angeles, California 90001",Chamberlain Group,Private Corporation
+01HQXAVCP954Y20ZZHK9K1SH45,"41621 Debs Avenue, Atlanta, Georgia 30301",The RealReal,Private Corporation
+01HQXAVCP9A5Q4EV110SXNWXAH,"6 Shasta Terrace, San Francisco, California 94102",Santander,Private Corporation
+01HQXAVCP9RA84ENQXT74512Z4,"0 Del Sol Street, Austin, Texas 778613",Live Nation Entertainment,Private Corporation
+01HQXAVCP9Y8Q2AG5GG7BE4CNA,"7468 Fairview Crossing, Chicago, Illinois 60007",Forbes,Private Corporation
+01HQXAVCPA5NW94EB3DDHT7EPB,"76787 Fremont Plaza, Dallas, Texas 75019", Jane Street ,Non-Profit Organization
+01HQXAVCPA529NBV2YSTCSYMPR,"64949 Dawn Point, Boston, Massachusetts 02111",Roku,Private Corporation
+01HQXAVCPA1950R98FJ3F7B0V4,"475 Manufacturers Center, Boston, Massachusetts 02108", NewsBreak ,Private Corporation
+01HQXAVCPBQAK3TGAXNY0STC44,"3 Steensland Crossing, Chicago, Illinois 60018",Alarm.com,Private Corporation
+01HQXAVCPBTJGACZKRXZM6PXAZ,"1 Melby Crossing, Chicago, Illinois 60007",EquipmentShare,Non-Profit Organization
+01HQXAVCPBXS6ETA6026RGHC35,"5 Melody Junction, Los Angeles, California 90003",Wisk,Private Corporation
+01HQXAVCPCRFASZT2W7ZM0ARXR,"16 Daystar Road, New York, New York 10002",E-Space,Private Corporation
+01HQXAVCPCK9CXB4E8370GN18C,"2 Lyons Terrace, Atlanta, Georgia 30301", GigaBrain ,Private Corporation
+01HQXAVCPDFZZ0P10R3CDCYGF7,"892 Rutledge Park, Boston, Massachusetts 02108",Samsara,Private Corporation
+01HQXAVCPDZX3GFN2935ZX5PN1,"284 Sage Plaza, Los Angeles, California 90002",ExodusPoint,Startup
+01HQXAVCPDYDYG8CZX3Z5T4QQQ,"3209 Chive Alley, Tampa, Florida 33601",Navan (fka TripActions),Non-Profit Organization
+01HQXAVCPEC3NNX968EBTVGQCD,"0614 Rieder Crossing, Miami, Florida 33109",Dynatrace,Private Corporation
+01HQXAVCPEM51PZ6JJR54JWJ1H,"3268 Meadow Valley Park, Austin, Texas 73301",Lucid,Startup
+01HQXAVCPE1K0VX7E3SP3ZSQHJ,"5 Manufacturers Parkway, Tampa, Florida 33601", Conduit ,Non-Profit Organization
+01HQXAVCPF9HSK69PV79GSN4KC,"71 Daystar Center, Miami, Florida 33101",Kargo,Startup
+01HQXAVCPF0JHZY0TK70ATJD26,"23746 Fallview Parkway, Denver, Colorado 80019", MIT Lincoln Laboratory ,Private Corporation
+01HQXAVCPG25N2EWDNK3GY4ESQ,"6 Kings Pass, Miami, Florida 33126", TikTok ,Private Corporation
+01HQXAVCPGXHG8G628BDPKGECP,"13 Reinke Plaza, Denver, Colorado 80019",Gen,Private Corporation
+01HQXAVCPG111WSGGY62H9Y7TN,"158 Onsgard Point, Austin, Texas 778613", Constellation Technologies ,Private Corporation
+01HQXAVCPHY1RNG3885A23RJYT,"75 Monument Terrace, New York, New York 10003",Inari Agriculture,Private Corporation
+01HQXAVCPHBN0G8N7AF63NRNFM,"4 6th Street, Denver, Colorado 80014",Electric Hydrogen,Private Corporation
+01HQXAVCPJ218ZA3GJA08BR1B6,"1857 Meadow Valley Court, Miami, Florida 33109",Edward Daniels Group,Private Corporation
+01HQXAVCPJD3P53WB6MXCRZYKX,"371 Sundown Court, Seattle, Washington 98103",Yext,Private Corporation
+01HQXAVCPJDK3N52P0DMK6QMCZ,"50 Amoth Road, Los Angeles, California 90002", NVIDIA ,Private Corporation
+01HQXAVCPJ2PGZ2BS6RNDJC0EH,"80 Harper Street, Chicago, Illinois 60007",Wayfair,Private Corporation
+01HQXAVCPK01K1ME2405MXMVE3,"9713 5th Road, Chicago, Illinois 60106", Uncountable ,Private Corporation
+01HQXAVCPKBTWNXMAM0XXDT5E3,"87 Bashford Lane, Denver, Colorado 80019",Elevance Health,Private Corporation
+01HQXAVCPM9CNZ0VQPYN3AESJJ,"03 Green Lane, Boston, Massachusetts 02111",Hewlett Packard (HP),Private Corporation
+01HQXAVCPM4NSESN69XRXWM6KS,"56564 Vahlen Avenue, San Francisco, California 94107",Anduril,Private Corporation
+01HQXAVCPNB3BM9813QNZZ519Q,"5 Village Green Park, Atlanta, Georgia 30033", Chartboost ,Private Corporation
+01HQXAVCPN0ZBX3E5TNJ18S7WZ,"0 Sunnyside Point, Denver, Colorado 80019",Konrad Group,Private Corporation
+01HQXAVCPN6XGG0VW2F3SEH5SA,"86836 Sheridan Lane, Tampa, Florida 33592",Netflix,Private Corporation
+01HQXAVCPPFYDJFMF8XWMF4SBT,"2514 Pierstorff Pass, Atlanta, Georgia 30033", Technergetics ,Private Corporation
+01HQXAVCPPZJYK9GQ61HVGQ5A8,"1 Monterey Lane, Atlanta, Georgia 30033",Cadence Design Systems,Private Corporation
+01HQXAVCPQQWTDJREPGT1QSSNM,"6426 Melby Crossing, Chicago, Illinois 60106",Welocalize,Startup
+01HQXAVCPQZQKFY1JF48CMNVFV,"76 Riverside Lane, Miami, Florida 33126", Riot Games ,Startup
+01HQXAVCPRKVFRHW30MVGVPT6P,"5214 Bluestem Center, Seattle, Washington 98101",Onbe,Private Corporation
+01HQXAVCPRMK17QM6FJ6Q54JAA,"98828 Merry Point, Los Angeles, California 90001",The Voleon Group,Private Corporation
+01HQXAVCPRT97Z9D2JJP7F0GSD,"52 Del Sol Parkway, Tampa, Florida 33592", EliseAI ,Private Corporation
+01HQXAVCPS7FHEEJTSMEWX3SQW,"54839 Moose Terrace, Boston, Massachusetts 02108", Tencent ,Private Corporation
+01HQXAVCPSHQC3P187BZT131NQ,"68 Longview Trail, Los Angeles, California 90003",Databricks,Startup
+01HQXAVCPSKAXASJN6YGBXPJ44,"57075 Riverside Street, Denver, Colorado 80019",Gelber Group,Startup
+01HQXAVCPTHKS0GHEVRDDSAMTP,"4 Northwestern Lane, Austin, Texas 73301", Wayfair ,Private Corporation
+01HQXAVCPTP4EWN8SVKCV4NW1P,"375 Lakewood Drive, Los Angeles, California 90001", Tesla ,Private Corporation
+01HQXAVCPTPFRVZ8GSBCKZAN7F,"45995 Superior Point, Boston, Massachusetts 02110", Penn Interactive ,Startup
+01HQXAVCPVEC2FHWBN2QHD4H87,"78841 East Hill, Denver, Colorado 80014", Niantic ,Private Corporation
+01HQXAVCPVRPFYW5Z1ZSGHSVWY,"5 Grasskamp Junction, Seattle, Washington 98102",Ultima Genomics,Private Corporation
+01HQXAVCPWT2ES6668992ZH5CJ,"83 Riverside Hill, Miami, Florida 33101", Amazon ,Private Corporation
+01HQXAVCPW0YGD002HMEAS6JXV,"391 Dahle Circle, Los Angeles, California 90003", 84.51 Degrees ,Private Corporation
+01HQXAVCPWPJM4QFZAFC1M27CY,"9 North Park, Denver, Colorado 80014", Chan Zuckerberg Biohub  ,Non-Profit Organization
+01HQXAVCPXB1F6AMM0QRG5S59P,"590 Anzinger Plaza, Dallas, Texas 75019",Advisor360¬∞,Startup
+01HQXAVCPX811A3MKGHE7JGEMW,"50 Marcy Place, Dallas, Texas 75032", Affirm ,Private Corporation
+01HQXAVCPXJ816ASSR2X3BE7E5,"6 8th Hill, Miami, Florida 33126",DRW,Private Corporation
+01HQXAVCPYPZAJ1RXPRQ2AKJ8R,"735 Ronald Regan Street, Boston, Massachusetts 02111",Addepar,Startup
+01HQXAVCPYNB053M2QK24DDQYE,"133 Summit Junction, Denver, Colorado 80014", OptionMetrics ,Private Corporation
+01HQXAVCPZGG65EWC3CE0RT17E,"2534 Bashford Park, Seattle, Washington 98103",Live Ramp,Startup
+01HQXAVCPZME3ZB5VC7EHV8MXG,"05885 Brown Parkway, Seattle, Washington 98103",Mobilityware,Private Corporation
+01HQXAVCQ02365QPRJ62VXC478,"543 Bellgrove Way, Chicago, Illinois 60007", Elise AI ,Private Corporation
+01HQXAVCQ065QXBQ8K6ZACMP7Q,"6156 6th Road, San Francisco, California 94102",WeRide,Private Corporation
+01HQXAVCQ0K57FWQEAHEADAYS5,"99185 Manufacturers Plaza, Dallas, Texas 75032", Arsiem Corporation ,Private Corporation
+01HQXAVCQ13RHC0BM4CPVG5WH2,"1756 Donald Place, Boston, Massachusetts 02108", The Athletic Media Company ,Private Corporation
+01HQXAVCQ1DRTG1YMW8WA8QGSG,"23504 Westend Circle, Atlanta, Georgia 30301",Samsung,Private Corporation
+01HQXAVCQ27YM9YWJ61M5FZA16,"7504 Waywood Drive, Los Angeles, California 90003", Navan (fka TripActions) ,Startup
+01HQXAVCQ22MNS16DAVXPAY14E,"71882 Corscot Court, Atlanta, Georgia 30303",Codazen,Private Corporation
+01HQXAVCQ2NHV1ZNPVCE07W79X,"51493 Hagan Plaza, Chicago, Illinois 60018",Expedia,Private Corporation
+01HQXAVCQ23Z2DW5MT0NWKFDP4,"1596 Jackson Hill, Chicago, Illinois 60018",RVO Health,Private Corporation
+01HQXAVCQ3PCWDRME1PV94SJHJ,"729 Anniversary Parkway, New York, New York 10002", Alto Pharmacy ,Private Corporation
+01HQXAVCQ3HK4ADNY57HK3MNKR,"4537 Comanche Drive, Tampa, Florida 33592", Taboola ,Startup
+01HQXAVCQ4MSQ8R5D8GHSE2ZSA,"490 Morrow Terrace, Atlanta, Georgia 30033", FreedomPay ,Private Corporation
+01HQXAVCQ4H3BW127B2HYHPV42,"9420 Briar Crest Alley, New York, New York 10002",Jerry,Private Corporation
+01HQXAVCQ4B0RVZV5PQMRF2228,"726 Corry Crossing, Los Angeles, California 90001",MyFitnessPal,Private Corporation
+01HQXAVCQ5P0HC3497F85N7E5T,"76 Glendale Circle, Denver, Colorado 80019",Momentum Worldwide,Private Corporation
+01HQXAVCQ5D7ZWTXG117VS0WH2,"523 Myrtle Center, Los Angeles, California 90001", PayPal ,Private Corporation
+01HQXAVCQ6Q0WV7ETF9AM4FWDP,"54 Gina Street, Miami, Florida 33126", Vontive ,Private Corporation
+01HQXAVCQ65NQQBYB9NWGCBS05,"2547 Barnett Road, Los Angeles, California 90003", Hitachi Vantara ,Private Corporation
+01HQXAVCQ6JA8GYDNJAAEAQXAQ,"18 Sunbrook Pass, Boston, Massachusetts 02108", GPTZero ,Private Corporation
+01HQXAVCQ7MCQRSSZ85YNH3HH6,"55 Pankratz Lane, New York, New York 10003",Match Group,Private Corporation
+01HQXAVCQ7SQ7NE6T3PZVRETRV,"509 Green Ridge Park, Atlanta, Georgia 30033", Western Digital ,Private Corporation
+01HQXAVCQ7NXTTY0A8XWMM321A,"94 Dixon Point, Seattle, Washington 98102",Aurora Innovation,Startup
+01HQXAVCQ7EXB02036SGHHMWQR,"29668 Cardinal Terrace, Atlanta, Georgia 30303",Trumid,Private Corporation
+01HQXAVCQ8JDT5T1WW1N0PGJ7Z,"0 Erie Circle, Atlanta, Georgia 30033",Five9,Startup
+01HQXAVCQ8HY7FZWJRRT99VSEX,"0060 Corscot Way, Seattle, Washington 98102",Genesis Therapeutics,Private Corporation
+01HQXAVCQ9GPK98FCP6NTCD04N,"8 Ridge Oak Park, Dallas, Texas 75001",IXL Learning,Private Corporation
+01HQXAVCQ9SK0BD1C2KGC0JQ0Y,"4801 Mccormick Crossing, San Francisco, California 94107", Coinbase ,Private Corporation
+01HQXAVCQ9PQSKBE2AN0MJXRXY,"2 Waubesa Junction, Tampa, Florida 33601",Olo,Startup
+01HQXAVCQA3PHVNX86826RMCQW,"37237 Russell Avenue, Seattle, Washington 98102",Thousand Eyes,Startup
+01HQXAVCQABE7JV5DP5YDB52J0,"7408 Talmadge Court, Atlanta, Georgia 30301", Nutanix ,Private Corporation
+01HQXAVCQBVHT9XC34FKA4XYXB,"3 Shopko Drive, Tampa, Florida 33592", Capital One ,Private Corporation
+01HQXAVCQBFE4PKXX3J4JTNYFN,"12450 Utah Lane, Chicago, Illinois 60106",Acadian Asset Management,Private Corporation
+01HQXAVCQCX7W0DE8CW7SNK1JY,"63 Emmet Alley, Miami, Florida 33126", Fluence ,Private Corporation
+01HQXAVCQC4H2QMSWE51KABR6J,"20099 Hovde Hill, Denver, Colorado 80014", Confluent ,Private Corporation
+01HQXAVCQDWVBTA1DHCVSN2YYP,"77 Linden Road, Denver, Colorado 80022", Cover Genius ,Non-Profit Organization
+01HQXAVCQD33FNHH5K45EATERY,"256 Messerschmidt Street, Atlanta, Georgia 30303",UDisc,Private Corporation
+01HQXAVCQD3VP309KE1W95FREM,"79 Sutteridge Drive, Miami, Florida 33101",Applied Materials,Private Corporation
+01HQXAVCQFFPG5M23NVR0R2X1M,"76544 Sachtjen Parkway, Tampa, Florida 33602", Govini ,Startup
+01HQXAVCQFS4TH3X07YPC59635,"7965 Shopko Junction, Miami, Florida 33109",Weiss Asset Management,Non-Profit Organization
+01HQXAVCQGAKD4T8TN9JN7MKFV,"9 Veith Park, Tampa, Florida 33601",Oshkosh,Private Corporation
+01HQXAVCQGTAYWCG9CTXDRHJ71,"26 Transport Lane, Chicago, Illinois 60106", Codazen ,Private Corporation
+01HQXAVCQHB5ZJHP91FE26SXGE,"4 Almo Road, Boston, Massachusetts 02108",TigerGraph,Startup
+01HQXAVCQHTVKE950JRBXWERBF,"522 Coolidge Junction, Miami, Florida 33109",Alexandra Lozano Immigration Law PLLC,Private Corporation
+01HQXAVCQJG0Z9NZPKQZDPD6Q2,"197 Golf View Plaza, Miami, Florida 33109",Cohere,Private Corporation
+01HQXAVCQJY4E59BBFV91ETWHQ,"689 Prairieview Circle, Dallas, Texas 75019",Capella Space,Private Corporation
+01HQXAVCQJHQE45E7777EEAQC1,"0 Delladonna Pass, Seattle, Washington 98101", The Boeing Company ,Private Corporation
+01HQXAVCQJFY61AMWMNSWS0F0E,"19 New Castle Circle, Austin, Texas 73301", Metron ,Private Corporation
+01HQXAVCQKWR6VRFC069N4V128,"06 Buena Vista Crossing, Austin, Texas 73344", Sprout Social ,Private Corporation
+01HQXAVCQKFWTQ7TS854187KZQ,"408 Summit Alley, Miami, Florida 33109", identifeye HEALTH,Private Corporation
+01HQXAVCQKQ56Z7RJ71X1PVPZ2,"0 Dakota Park, Miami, Florida 33126", Optiver ,Startup
+01HQXAVCQKKYWFF64YWV4K3E8R,"8113 Debs Junction, San Francisco, California 94107", Zoox ,Private Corporation
+01HQXAVCQKNAXHFCHT3ANH1HK0,"6 Barnett Crossing, Denver, Colorado 80019",Orion Innovation,Private Corporation
+01HQXAVCQMVA719WESR4NKVZ7N,"0681 Barnett Parkway, New York, New York 10002", Uber ,Startup
+01HQXAVCQMRZCV2GMQY7S5Z1HE,"7 Artisan Plaza, Seattle, Washington 98102", Ripple ,Private Corporation
+01HQXAVCQNXB75JXBVTHTKW86N,"624 Brickson Park Junction, Seattle, Washington 98103",BambooHR,Startup
+01HQXAVCQNMEQEFMHW307R7PP8,"2 Victoria Junction, Atlanta, Georgia 30301",Nutanix,Private Corporation
+01HQXAVCQNMZX5WRX75WCR0FRF,"05 Artisan Plaza, San Francisco, California 94107",Spry Methods,Private Corporation
+01HQXAVCQPE51ZHYQDFJQN8RFT,"9 Homewood Point, Boston, Massachusetts 02110", Salesforce ,Startup
+01HQXAVCQPEEVZBF82Z6K9RCJ0,"6170 Golden Leaf Circle, Austin, Texas 73344",Schonfeld,Private Corporation
+01HQXAVCQQWYP2N9KB3GGXF955,"6 Eastlawn Center, Austin, Texas 73344",Intel,Private Corporation
+01HQXAVCQQ5ZER7W2VQ1D7NTGE,"1 Clarendon Lane, Denver, Colorado 80019", Flipp ,Private Corporation
+01HQXAVCQQBJ0N2PNV7PV6XR6E,"95463 Arrowood Pass, San Francisco, California 94107",Spot Freight,Private Corporation
+01HQXAVCQR31R8TYNJXCSCS7CV,"0 Knutson Park, Miami, Florida 33126", Yahoo ,Private Corporation
+01HQXAVCQRZNRV1QSXE05NJAFX,"5 Kingsford Center, Austin, Texas 73344", LogicMonitor ,Private Corporation
+01HQXAVCQRNXK5FY90494TRB90,"64 American Circle, Austin, Texas 73344", HBK Capital Management ,Private Corporation
+01HQXAVCQR0KK9J59RGXXHP1YH,"91993 Corscot Point, Seattle, Washington 98101", ServiceNow ,Private Corporation
+01HQXAVCQRFAGAV9ZYQMKPHM03,"24584 Novick Plaza, Dallas, Texas 75001", Coca-Cola ,Private Corporation
+01HQXAVCQS9YRKPJHYH127M12D,"09 Hoffman Way, Denver, Colorado 80019", Arista Networks ,Private Corporation
+01HQXAVCQSFTK3QBVGVAN9B9KJ,"57885 Bay Trail, Seattle, Washington 98103", Businessolver ,Private Corporation
+01HQXAVCQSNJ4BNHWR1TCTZFQM,"2 Gulseth Pass, Atlanta, Georgia 30033",Figma,Private Corporation
+01HQXAVCQSZWSP46KVDWBCCB4Y,"6 Glendale Park, New York, New York 10003",IEX,Private Corporation
+01HQXAVCQSQ1QSGKGKRFX2Y1B2,"8 Monterey Point, Seattle, Washington 98102",SharkNinja,Private Corporation
+01HQXAVCQT2H7D3PJDMPBTGGA5,"87951 Carioca Drive, Miami, Florida 33109", Regrello ,Private Corporation
+01HQXAVCQTSQKHEX3R8FME3VME,"40389 Elgar Trail, Seattle, Washington 98102",AeroVect,Private Corporation
+01HQXAVCQTJY7AZ1D8GMNX4J82,"3 Summer Ridge Street, Seattle, Washington 98102",Democratic National Committee (DNC),Startup
+01HQXAVCQTSRQK9PBXTK0976V4,"906 Spenser Park, Boston, Massachusetts 02111",Kodiak Robotics,Private Corporation
+01HQXAVCQT8FK9V0NX3XAS4F8Y,"3 Delaware Crossing, Boston, Massachusetts 02110",First American,Private Corporation
+01HQXAVCQTN5HF896HX8TH7B9M,"22 Del Mar Pass, Austin, Texas 73344",Fortra,Private Corporation
+01HQXAVCQV8G9VHVP1XP0SK707,"7 Mendota Hill, New York, New York 10003", TuSimple ,Private Corporation
+01HQXAVCQWSCW643CDX2D66NCW,"775 Westport Parkway, Los Angeles, California 90001", Pear VC ,Private Corporation
+01HQXAVCQWZB5ZPC12S1DMX482,"8 Lien Park, Miami, Florida 33109", Alchemy ,Private Corporation
+01HQXAVCQW9QK2HRKTT343QHZY,"68 Meadow Valley Hill, Miami, Florida 33126",Crowdstrike,Private Corporation
+01HQXAVCQXXHR317F0TR554R27,"51 Waywood Trail, Denver, Colorado 80014",Openmesh Networks,Private Corporation
+01HQXAVCQX9CXJRN8ZFRGH5F0K,"487 Sullivan Parkway, San Francisco, California 94103", Minitab ,Private Corporation
+01HQXAVCQXSGXVX2RPBC80RQZE,"7 Farmco Parkway, New York, New York 10002",Mysten Labs,Non-Profit Organization
+01HQXAVCQXE1RD288FFEM024BX,"3 Anhalt Drive, San Francisco, California 94102",Redsox,Private Corporation
+01HQXAVCQXQBG28B2NRPW5HBD1,"39 Armistice Hill, Tampa, Florida 33602", SoFi ,Private Corporation
+01HQXAVCQXFD2JTZABM2FJESBQ,"1 Dayton Court, Miami, Florida 33109", Episode Six ,Private Corporation
+01HQXAVCQYH0BRAG2B2RQJ7XXK,"480 Oriole Park, Los Angeles, California 90002",Rackner,Private Corporation
+01HQXAVCQYW1KXPRZ6615PWV2F,"41334 Holy Cross Plaza, Dallas, Texas 75019",Dow Jones,Private Corporation
+01HQXAVCQYJQ9VR893WZ044KEF,"00668 Schlimgen Point, Atlanta, Georgia 30301",Xylem,Private Corporation
+01HQXAVCQY2ADH326EKPXK0GKB,"45 Miller Trail, Seattle, Washington 98101", Ultra Mobile ,Private Corporation
+01HQXAVCQZ4KXNVPTY3YTFK8RR,"37449 Kensington Drive, Dallas, Texas 75032",Bose,Private Corporation
+01HQXAVCQZCA5ZG53H7RDGSZB6,"63 Veith Place, Tampa, Florida 33592",Canonical,Private Corporation
+01HQXAVCQZFRW90D2N6EFZPJAT,"49 Center Court, Austin, Texas 778613",Ascend Analytics,Private Corporation
+01HQXAVCQZ8KY2KRJE0HCA5REY,"003 Clove Way, Boston, Massachusetts 02110",Snyk,Private Corporation
+01HQXAVCQZT7RE42HZ1RT90XT3,"23 Corscot Road, Boston, Massachusetts 02110",HCVT,Private Corporation
+01HQXAVCQZYF5N9HVP8QNCXW97,"566 Cordelia Center, Los Angeles, California 90001", Zynga ,Private Corporation
+01HQXAVCR0PX1DP6TJNR6FAJ4M,"935 Old Gate Parkway, San Francisco, California 94107", Pure Storage ,Startup
+01HQXAVCR0113ZBMBE6D7ARSM2,"3792 Rutledge Crossing, Austin, Texas 73301", Grammarly ,Private Corporation
+01HQXAVCR009GYX7Z739EYC6DQ,"9204 East Parkway, Miami, Florida 33126", MarketAxess ,Private Corporation
