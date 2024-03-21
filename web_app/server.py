@@ -102,6 +102,21 @@ def add():
 def login():
 	pass
 
+@app.route('/job_board')
+def job_board():
+	job_board_query = """
+	    SELECT j.Job_ID, j.Experience, j.Location, j.Requirements, j.Skills, c.Name as Company_Name, r.Name as Recruiter_Name
+	    FROM Job_Posting j
+	    JOIN Company c ON j.Company_ID = c.Company_ID
+	    JOIN Recruiter r ON j.Recruiter_Username = r.Username
+	    """
+	cursor = g.conn.execute(text(job_board_query))
+	postings = cursor.fetchall()
+	print(postings)
+	cursor.close()
+
+	return render_template("job_board.html", postings=postings)
+
 
 if __name__ == "__main__":
 	import click

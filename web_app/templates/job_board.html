@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Available Jobs</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <h2>Job Board</h2>
+    <table>
+    <thead>
+        <tr>
+            <th>Job ID</th>
+            <th>Experience</th>
+            <th>Location</th>
+            <th>Requirements</th>
+            <th>Skills</th>
+            <th>Company</th>
+            <th>Recruiter</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for posting in postings %}
+            <tr>
+                <td>{{ posting[0] }}</td>
+                <td>{{ posting[1] }}</td>
+                <td>{{ posting[2] }}</td>
+                <td>{{ posting[3] }}</td>
+                <td>{{ posting[4] }}</td>
+                <td>{{ posting[5] }}</td>
+                <td>{{ posting[6] }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>
