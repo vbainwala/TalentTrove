@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+    <title>Job Filter</title>
+</head>
+<body>
+    <!-- <h1>{% block title %} Location {% endblock %}</h1> -->
+    <h3>Filter the Job Board</h3>
+    <form method="post">
+        <label for="Location">Location</label>
+        <br>
+        <input type="text" name="Location"
+               placeholder="Location"
+               value="{{ request.form['Location'] }}"></input>
+        <br>
+        <label for="Company">Company</label>
+        <br>
+        <input type="text" name="Company"
+               placeholder="Company"
+               value="{{ request.form['Company'] }}"></input>
+        <br>
+        <label for="Skills">Skills</label>
+        <br>
+        <input type="text" name="Skills"
+               placeholder="Skills"
+               value="{{ request.form['Skills'] }}"></input>
+        <!-- <label for="content">Message Content</label>
+        <br>
+        <textarea name="content"
+                  placeholder="Message content"
+                  rows="15"
+                  cols="60"
+                  >{{ request.form['content'] }}</textarea>-->
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
