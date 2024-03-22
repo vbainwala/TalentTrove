@@ -1,3 +1,4 @@
+from crypt import methods
 import os
 from sqlalchemy import *
 from sqlalchemy.pool import NullPool
@@ -7,8 +8,8 @@ tmpl_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
 app = Flask(__name__, template_folder=tmpl_dir)
 
 # ADD DATABASE CREDENTIALS HERE BEFORE RUNNING; DO NOT PUSH
-DATABASE_USERNAME = ""
-DATABASE_PASSWRD = ""
+DATABASE_USERNAME = "vb2589"
+DATABASE_PASSWRD = "18091303"
 DATABASE_HOST = "35.212.75.104"
 DATABASEURI = f"postgresql://{DATABASE_USERNAME}:{DATABASE_PASSWRD}@{DATABASE_HOST}/proj1part2"
 
@@ -102,8 +103,58 @@ def add():
 def login():
 	pass
 
-@app.route('/job_board')
+@app.route('/job_board',methods=('GET','POST'))
 def job_board():
+	if request.method=="POST":
+		location = request.form['Location']
+		company = request.form['Company']
+		skills = request.form['Skills']
+		search = request.form['Search']
+		experience = request.form['Experience']
+		print(location,company)
+		if not search:
+			filter_query = """SELECT j.Job_ID,j.Job_Title, j.Experience, j.Location, j.Requirements, j.Skills, c.Name as Company_Name, r.Name as Recruiter_Name
+							FROM Job_Posting j
+							JOIN Company c ON j.Company_ID = c.Company_ID
+							JOIN Recruiter r ON j.Recruiter_Username = r.Username
+							WHERE j.location LIKE :location 
+							AND c.Name LIKE :company
+							AND j.Skills LIKE :skills
+							AND j.Experience LIKE :experience"""
+			params = {}
+			params["location"]= "%"+location+"%"
+			params["company"] = "%"+company+"%"
+			params["skills"] = "%"+skills+"%"
+			params["experience"] = "%"+experience+"%"
+			# print(params)
+			filter_query = text(filter_query)
+			cursor = g.conn.execute(filter_query,params)
+			postings = cursor.fetchall()
+			# print(postings)
+			cursor.close()
+			return render_template('job_board.html',postings=postings)
+		else:
+			filter_query = """SELECT j.Job_ID,j.Job_Title, j.Experience, j.Location, j.Requirements, j.Skills, c.Name as Company_Name, r.Name as Recruiter_Name
+							FROM Job_Posting j
+							JOIN Company c ON j.Company_ID = c.Company_ID
+							JOIN Recruiter r ON j.Recruiter_Username = r.Username
+							WHERE j.location LIKE :search  
+							OR c.Name LIKE :search
+							OR j.Skills LIKE :search
+							OR j.Job_Title LIKE :search
+							OR j.Experience LIKE :search
+							OR j.Requirements LIKE :search
+							OR r.Name LIKE :search """
+			params = {}
+			params["search"] = "%"+search+"%"
+			# print(params)
+			filter_query = text(filter_query)
+			cursor = g.conn.execute(filter_query,params)
+			postings = cursor.fetchall()
+			# print(postings)
+			cursor.close()
+			return render_template('job_board.html',postings=postings)
+	return render_template('job_board.html')
 	job_board_query = """
 	    SELECT j.Job_ID, j.Experience, j.Location, j.Requirements, j.Skills, c.Name as Company_Name, r.Name as Recruiter_Name
 	    FROM Job_Posting j
@@ -117,6 +168,7 @@ def job_board():
 
 	return render_template("job_board.html", postings=postings)
 
+'''
 @app.route('/job_board_filter/',methods=('GET','POST'))
 def job_board_filter():
 	print(request.args)
@@ -147,7 +199,7 @@ def job_board_filter():
 			cursor.close()
 			return render_template('job_board.html',postings=postings)
 	return render_template('job_filter.html')
-
+'''
 
 if __name__ == "__main__":
 	import click
