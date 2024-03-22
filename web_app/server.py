@@ -8,8 +8,8 @@ tmpl_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
 app = Flask(__name__, template_folder=tmpl_dir)
 
 # ADD DATABASE CREDENTIALS HERE BEFORE RUNNING; DO NOT PUSH
-DATABASE_USERNAME = "vb2589"
-DATABASE_PASSWRD = "18091303"
+DATABASE_USERNAME = ""
+DATABASE_PASSWRD = ""
 DATABASE_HOST = "35.212.75.104"
 DATABASEURI = f"postgresql://{DATABASE_USERNAME}:{DATABASE_PASSWRD}@{DATABASE_HOST}/proj1part2"
 
@@ -155,18 +155,18 @@ def job_board():
 			cursor.close()
 			return render_template('job_board.html',postings=postings)
 	return render_template('job_board.html')
-	job_board_query = """
-	    SELECT j.Job_ID, j.Experience, j.Location, j.Requirements, j.Skills, c.Name as Company_Name, r.Name as Recruiter_Name
-	    FROM Job_Posting j
-	    JOIN Company c ON j.Company_ID = c.Company_ID
-	    JOIN Recruiter r ON j.Recruiter_Username = r.Username
-	    """
-	cursor = g.conn.execute(text(job_board_query))
-	postings = cursor.fetchall()
-	print(postings)
-	cursor.close()
+	# job_board_query = """
+	#     SELECT j.Job_ID, j.Experience, j.Location, j.Requirements, j.Skills, c.Name as Company_Name, r.Name as Recruiter_Name
+	#     FROM Job_Posting j
+	#     JOIN Company c ON j.Company_ID = c.Company_ID
+	#     JOIN Recruiter r ON j.Recruiter_Username = r.Username
+	#     """
+	# cursor = g.conn.execute(text(job_board_query))
+	# postings = cursor.fetchall()
+	# print(postings)
+	# cursor.close()
 
-	return render_template("job_board.html", postings=postings)
+	# return render_template("job_board.html", postings=postings)
 
 '''
 @app.route('/job_board_filter/',methods=('GET','POST'))
