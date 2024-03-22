@@ -3,13 +3,80 @@
 <head>
     <title>Available Jobs</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='job-styles.css') }}">
+    <style>
+        .form-row {
+            display: flex;
+        }
+        .form-group {
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
+    <h2>Job Search Filter</h2>
+    <!-- <form method="post">
+        <label for="Location">Location</label>
+        <label for="Company">Company</label>
+        <label for="Skills">Skills</label>
+        <br>
+        <input type="text" name="Location"
+               placeholder="Location"
+               value="{{ request.form['Location'] }}"></input>
+        <input type="text" name="Company"
+                placeholder="Company"
+                value="{{ request.form['Company'] }}"></input>
+        <input type="text" name="Skills"
+                placeholder="Skills"
+                 value="{{ request.form['Skills'] }}"></input>
+        <br>
+        
+        <br>
+        
+        <br>
+        
+        <br>
+       
+        <br> -->
+        <!-- <br>
+        <button type="submit">Submit</button>
+    </form> -->
+    <form method="post">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="Location">Location</label>
+                <input type="text" id="Location" name="Location" 
+                placeholder="Location" value="{{request.form['Location']}}"></input>
+            </div>
+            <div class="form-group">
+                <label for="Company">Company</label>
+                <input type="text" id="Company" name="Company" 
+                placeholder="Company" value="{{request.form['Company']}}"></input>
+            </div>
+            <div class="form-group">
+                <label for="Skills">Skills</label>
+                <input type="text" id="Skills" name="Skills" 
+                placeholder="Skills" value="{{request.form['Skills']}}"></input>
+            </div> 
+            <div class="form-group">
+                <label for="Experience">Experience</label>
+                <input type="text" id="Skills" name="Experience" 
+                placeholder="Experience" value="{{request.form['Experience']}}"></input>
+            </div> 
+            <div class="form-group">
+                <label for="Attribute Search">Search</label>
+                <input type="text" id="search" name="Search" 
+                placeholder="Search" value="{{request.form['Search']}}"></input>
+            </div> 
+        </div>
+        <input type="submit" value="Submit">
+    </form>
     <h2>Job Board</h2>
+    <div class="table-container">
     <table>
     <thead>
         <tr>
             <th>Job ID</th>
+            <th>Job Title</th>
             <th>Experience</th>
             <th>Location</th>
             <th>Requirements</th>
@@ -28,10 +95,11 @@
                 <td>{{ posting[4] }}</td>
                 <td>{{ posting[5] }}</td>
                 <td>{{ posting[6] }}</td>
+                <td>{{ posting[7] }}</td>
             </tr>
         {% endfor %}
     </tbody>
 </table>
-
+</div>
 </body>
 </html>
