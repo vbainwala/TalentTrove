@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Post a Job</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script>
+    <!-- Hide additional fields until user selects what type of job it is, then only show relevant fields to add -->
+        function showAdditionalFields() {
+            var jobTypeSelect = document.getElementById("job_type");
+            var jobType = jobTypeSelect.value;
+            var additionalFields = document.getElementById("additional_fields");
+            additionalFields.innerHTML = "";
+
+            switch (jobType) {
+                case "full_time":
+                    additionalFields.innerHTML += '<label for="AnnualSalary">Annual Salary:</label>' +
+                                                  '<input type="number" id="AnnualSalary" name="AnnualSalary" required><br><br>';
+                    break;
+                case "internship":
+                case "coop":
+                    additionalFields.innerHTML += '<label for="Duration">Duration:</label>' +
+                                                  '<input type="text" id="Duration" name="Duration" required><br><br>' +
+                                                  '<label for="Salaried">Salaried:</label>' +
+                                                  '<select id="Salaried" name="Salaried" required>' +
+                                                  '<option value="true">Yes</option>' +
+                                                  '<option value="false">No</option>' +
+                                                  '</select><br><br>';
+                    if (jobType === "coop") {
+                        additionalFields.innerHTML += '<label for="Type">Type:</label>' +
+                                                      '<select id="Type" name="Type" required>' +
+                                                      '<option value="Industry">Industry</option>' +
+                                                      '<option value="Academic">Academic</option>' +
+                                                      '</select><br><br>';
+                    }
+                    break;
+            }
+        }
+    </script>
+</head>
+<body onload="showAdditionalFields()">
+    <h2>Post a New Job</h2>
+    <!-- All Job fields here -->
+    <form method="POST">
+        <label for="Job_ID">Job ID:</label>
+        <input type="text" id="Job_ID" name="Job_ID" required><br><br>
+
+        <label for="Job_Title">Job Title:</label>
+        <input type="text" id="Job_Title" name="Job_Title" required><br><br>
+
+        <label for="Experience">Experience:</label>
+        <input type="text" id="Experience" name="Experience" required><br><br>
+
+        <label for="Location">Location:</label>
+        <input type="text" id="Location" name="Location" required><br><br>
+
+        <label for="Requirements">Requirements:</label>
+        <input type="text" id="Requirements" name="Requirements" required><br><br>
+
+        <label for="Skills">Skills:</label>
+        <input type="text" id="Skills" name="Skills" required><br><br>
+
+        <label for="Company_ID">Company ID:</label>
+        <input type="text" id="Company_ID" name="Company_ID" required><br><br>
+
+        <label for="Recruiter_Username">Recruiter Username:</label>
+        <input type="text" id="Recruiter_Username" name="Recruiter_Username" required><br><br>
+
+        <label for="job_type">Job Type:</label>
+        <select id="job_type" name="job_type" onchange="showAdditionalFields()">
+
+        <option value="full_time">Full Time</option>
+        <option value="internship">Internship</option>
+        <option value="coop">Co-op</option>
+
+    </select>
+
+    <div id="additional_fields"></div>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
