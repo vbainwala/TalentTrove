@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reviews</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='review-styles.css') }}">
+</head>
+<body>
+    <h2>Interview Reviews</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Review ID</th>
+                <th>Interview Feedback</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for review in interview_reviews %}
+                <tr>
+                    <td>{{ review[0] }}</td>
+                    <td>{{ review[1] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Company Reviews</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Review ID</th>
+                <th>Company Feedback</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for review in company_reviews %}
+                <tr>
+                    <td>{{ review[0] }}</td>
+                    <td>{{ review[1] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

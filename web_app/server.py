@@ -155,51 +155,22 @@ def job_board():
 			cursor.close()
 			return render_template('job_board.html',postings=postings)
 	return render_template('job_board.html')
-	# job_board_query = """
-	#     SELECT j.Job_ID, j.Experience, j.Location, j.Requirements, j.Skills, c.Name as Company_Name, r.Name as Recruiter_Name
-	#     FROM Job_Posting j
-	#     JOIN Company c ON j.Company_ID = c.Company_ID
-	#     JOIN Recruiter r ON j.Recruiter_Username = r.Username
-	#     """
-	# cursor = g.conn.execute(text(job_board_query))
-	# postings = cursor.fetchall()
-	# print(postings)
-	# cursor.close()
 
-	# return render_template("job_board.html", postings=postings)
+@app.route('/reviews')
+def reviews():
+	# Will have two separate tables on the reviews page: one for candidate reviews, one for employee reviews
+	interview_reviews_query = """SELECT Review_ID, Interview_Feedback 
+							   FROM Review 
+							   WHERE Interview_Feedback IS NOT NULL"""
+	company_reviews_query = """SELECT Review_ID, Company_Feedback 
+							   FROM Review 
+							   WHERE Company_Feedback IS NOT NULL"""
+	interview_reviews = g.conn.execute(text(interview_reviews_query)).fetchall()
+	#print(interview_reviews)
+	company_reviews = g.conn.execute(text(company_reviews_query)).fetchall()
+	#print(company_reviews)
+	return render_template("reviews.html", interview_reviews=interview_reviews, company_reviews=company_reviews)
 
-'''
-@app.route('/job_board_filter/',methods=('GET','POST'))
-def job_board_filter():
-	print(request.args)
-	if request.method=="POST":
-		location = request.form['Location']
-		company = request.form['Company']
-		skills = request.form['Skills']
-		print(location,company)
-		if not location and not company and not skills:
-			flash("Location, company and skills are required")
-		else:
-			filter_query = """SELECT j.Job_ID, j.Experience, j.Location, j.Requirements, j.Skills, c.Name as Company_Name, r.Name as Recruiter_Name
-							FROM Job_Posting j
-							JOIN Company c ON j.Company_ID = c.Company_ID
-							JOIN Recruiter r ON j.Recruiter_Username = r.Username
-							WHERE j.location LIKE :location 
-							AND c.Name LIKE :company
-							AND j.Skills LIKE :skills """
-			params = {}
-			params["location"]= "%"+location+"%"
-			params["company"] = "%"+company+"%"
-			params["skills"] = "%"+skills+"%"
-			print(params)
-			filter_query = text(filter_query)
-			cursor = g.conn.execute(filter_query,params)
-			postings = cursor.fetchall()
-			print(postings)
-			cursor.close()
-			return render_template('job_board.html',postings=postings)
-	return render_template('job_filter.html')
-'''
 
 if __name__ == "__main__":
 	import click
