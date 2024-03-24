@@ -40,7 +40,22 @@
         <!-- <br>
         <button type="submit">Submit</button>
     </form> -->
+    <form method="POST">
+    <!-- Other filters here -->
+
+</form>
+
     <form method="post">
+        <div class="form-row">
+            <div class="form-group">
+                <select name="role_types" multiple>
+                    <option value="full_time">Full Time</option>
+                    <option value="internship">Internship</option>
+                    <option value="coop">Co-op</option>
+                </select>
+                <input type="submit" value="Filter">
+            </div>
+        </div>
         <div class="form-row">
             <div class="form-group">
                 <label for="Location">Location</label>
