@@ -105,27 +105,27 @@ def login():
 
 @app.route('/job_board',methods=('GET','POST'))
 def job_board():
+
+	# Default query (i.e. what is executed if user does not select anything specific to filter by)
+	base_search_query = """SELECT j.Job_ID, j.Job_Title, j.Experience, j.Location, j.Requirements, j.Skills, 
+			                       c.Name as Company_Name, r.Name as Recruiter_Name
+			                       FROM Job_Posting j
+			                       JOIN Company c ON j.Company_ID = c.Company_ID
+			                       JOIN Recruiter r ON j.Recruiter_Username = r.Username
+	"""
 	if request.method == "POST":
 
 		# Collect all user selected field values
-		location = request.form['Location']
-		company = request.form['Company']
-		skills = request.form['Skills']
-		search = request.form['Search']
-		experience = request.form['Experience']
-		role_types = request.form['role_types']
+		location = request.form.get('Location', '')
+		company = request.form.get('Company', '')
+		skills = request.form.get('Skills', '')
+		search = request.form.get('Search', '')
+		experience = request.form.get('Experience', '')
+		role_types = request.form.getlist('role_types')
 
 		# Keep track of all user selected fields to filter by to build SQL query
 		where_clauses = []
 		params = {}
-
-		# Default query (i.e. what is executed if user does not select anything specific to filter by)
-		base_search_query = """SELECT j.Job_ID, j.Job_Title, j.Experience, j.Location, j.Requirements, j.Skills, 
-		                       c.Name as Company_Name, r.Name as Recruiter_Name
-		                       FROM Job_Posting j
-		                       JOIN Company c ON j.Company_ID = c.Company_ID
-		                       JOIN Recruiter r ON j.Recruiter_Username = r.Username
-	    """
 
 		# Collect user selected field values
 		if location:
@@ -157,15 +157,16 @@ def job_board():
 
 		if search:
 			# If user is searching, set up filter query statements based on the keywords they entered
-			search_clauses = """j.location LIKE :search  
-							  OR c.Name LIKE :search
-							  OR j.Skills LIKE :search
-							  OR j.Job_Title LIKE :search
-							  OR j.Experience LIKE :search
-							  OR j.Requirements LIKE :search
-							  OR r.Name LIKE :search 
-		    """
-			where_clauses.append("(" + search_clauses + ")")
+			search_clauses = " OR ".join([
+				"j.location LIKE :search",
+				"c.Name LIKE :search",
+				"j.Skills LIKE :search",
+				"j.Job_Title LIKE :search",
+				"j.Experience LIKE :search",
+				"j.Requirements LIKE :search",
+				"r.Name LIKE :search"
+			])
+			where_clauses.append(f"({search_clauses})")
 			params["search"] = "%" + search + "%"
 
 		# Check which query to execute: query with user selected params if any, and if not any then default to show all
@@ -180,6 +181,11 @@ def job_board():
 		cursor.close()
 
 		return render_template('job_board.html',postings=postings)
+
+	# On GET or if no filter is applied, show all postings
+	cursor = g.conn.execute(text(base_search_query))
+	postings = cursor.fetchall()
+	cursor.close()
 
 	return render_template('job_board.html')
 
