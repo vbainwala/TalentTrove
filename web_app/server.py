@@ -8,8 +8,8 @@ tmpl_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
 app = Flask(__name__, template_folder=tmpl_dir)
 
 # ADD DATABASE CREDENTIALS HERE BEFORE RUNNING; DO NOT PUSH
-DATABASE_USERNAME = ""
-DATABASE_PASSWRD = ""
+DATABASE_USERNAME = "vb2589"
+DATABASE_PASSWRD = "18091303"
 DATABASE_HOST = "35.212.75.104"
 DATABASEURI = f"postgresql://{DATABASE_USERNAME}:{DATABASE_PASSWRD}@{DATABASE_HOST}/proj1part2"
 
@@ -73,16 +73,16 @@ def index():
     print(request.args)
 
     # example database query
-    select_query = "SELECT username from candidate where username='pashlin0'"
-    cursor = g.conn.execute(text(select_query))
-    names = []
-    for result in cursor:
-        names.append(result[0])
-    cursor.close()
+    # select_query = "SELECT username from candidate where username='pashlin0'"
+    # cursor = g.conn.execute(text(select_query))
+    # names = []
+    # for result in cursor:
+    #     names.append(result[0])
+    # cursor.close()
 
-    context = dict(data = names)
+    # context = dict(data = names)
 
-    return render_template("index.html", **context)
+    return render_template("index_1.html")
 
 
 # Example of adding new data to the database
