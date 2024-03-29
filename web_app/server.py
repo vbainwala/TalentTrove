@@ -8,8 +8,8 @@ tmpl_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
 app = Flask(__name__, template_folder=tmpl_dir)
 
 # ADD DATABASE CREDENTIALS HERE BEFORE RUNNING; DO NOT PUSH
-DATABASE_USERNAME = "vb2589"
-DATABASE_PASSWRD = "18091303"
+DATABASE_USERNAME = ""
+DATABASE_PASSWRD = ""
 DATABASE_HOST = "35.212.75.104"
 DATABASEURI = f"postgresql://{DATABASE_USERNAME}:{DATABASE_PASSWRD}@{DATABASE_HOST}/proj1part2"
 
