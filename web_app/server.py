@@ -73,16 +73,16 @@ def index():
     print(request.args)
 
     # example database query
-    select_query = "SELECT username from candidate where username='pashlin0'"
-    cursor = g.conn.execute(text(select_query))
-    names = []
-    for result in cursor:
-        names.append(result[0])
-    cursor.close()
+    # select_query = "SELECT username from candidate where username='pashlin0'"
+    # cursor = g.conn.execute(text(select_query))
+    # names = []
+    # for result in cursor:
+    #     names.append(result[0])
+    # cursor.close()
 
-    context = dict(data = names)
+    # context = dict(data = names)
 
-    return render_template("index.html", **context)
+    return render_template("index_1.html")
 
 
 # Example of adding new data to the database
