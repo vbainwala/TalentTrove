@@ -6,6 +6,8 @@ from sqlalchemy.pool import NullPool
 from flask import Flask, flash, request, render_template, g, redirect, Response, url_for
 import flask_login
 from flask_login import UserMixin, login_user, current_user
+from itertools import groupby
+from operator import itemgetter
 
 tmpl_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
 app = Flask(__name__, template_folder=tmpl_dir)
@@ -354,6 +356,46 @@ def reviews():
     company_reviews = g.conn.execute(text(company_reviews_query)).fetchall()
 
     return render_template("reviews.html", interview_reviews=interview_reviews, company_reviews=company_reviews)
+
+
+@app.route('/applications')
+def applications():
+    if not current_user.is_authenticated:
+        return redirect(url_for('login'))
+
+    username = current_user.username
+    applications_data = []
+
+    # Case 1: user is a candidate, so show their applications only
+    candidate_check_query = """SELECT EXISTS(SELECT 1 FROM Candidate WHERE Username = :username)"""
+    is_candidate = g.conn.execute(text(candidate_check_query), {'username': username}).scalar()
+
+    if is_candidate:
+        applications_query = """SELECT a.*, j.Job_Title, c.Name
+                                FROM Application AS a 
+                                JOIN Job_Posting j ON a.Job_ID = j.Job_ID 
+                                JOIN Company c ON j.Company_ID = c.Company_ID
+                                WHERE Candidate_Username = :username"""
+        applications_data = g.conn.execute(text(applications_query), {'username': username}).fetchall()
+        return render_template('applications_candidate.html', applications=applications_data)
+
+    # Case 2: user is a recruiter, so show all applications for job postings for which they are lead recruiter
+    recruiter_check_query = """SELECT EXISTS(SELECT 1 FROM Recruiter WHERE Username = :username)"""
+    is_recruiter = g.conn.execute(text(recruiter_check_query), {'username': username}).scalar()
+
+    if is_recruiter:
+        applications_query = """SELECT a.*, j.Job_Title, j.Location, j.Requirements 
+                                    FROM Application AS a
+                                    JOIN Job_Posting j ON a.Job_ID = j.Job_ID
+                                    WHERE a.Recruiter_Username = :username
+                                    ORDER BY a.Job_ID"""
+        # Group by Job_ID before passing to template for distinct jobs to each get their own display table
+        applications_data = [row._asdict() for row in g.conn.execute(text(applications_query), {'username': username})]
+        grouped_applications = {k: list(v) for k, v in groupby(applications_data, key=itemgetter('job_id'))}
+        print(grouped_applications)
+        return render_template('applications_recruiter.html', grouped_applications=grouped_applications)
+
+    return "Unauthorized access", 401
 
 
 if __name__ == "__main__":

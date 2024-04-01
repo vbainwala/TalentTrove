@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Applications</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='job-styles.css') }}">
+    <style>
+        .form-row {
+            display: flex;
+        }
+        .form-group {
+            margin-right: 10px;
+        }
+        .job-header {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Job Applications</h2>
+    {% for job_id, applications in grouped_applications.items() %}
+        <div class="job-header">
+            <h3>{{ applications[0]['job_title'] }}</h3>
+            <p>Location: {{ applications[0]['location'] }}</p>
+            <p>Requirements: {{ applications[0]['requirements'] }}</p>
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cover Letter</th>
+                        <th>Resume</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for application in applications %}
+                        <tr>
+                            <td>{{ application['cover_letter'] }}</td>
+                            <td>{{ application['resume'] }}</td>
+                            <td>{{ application['status'] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endfor %}
+</body>
+</html>
