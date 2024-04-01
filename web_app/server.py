@@ -1,11 +1,21 @@
 from crypt import methods
 import os
+import flask
 from sqlalchemy import *
 from sqlalchemy.pool import NullPool
 from flask import Flask, flash, request, render_template, g, redirect, Response, url_for
+import flask_login
+from flask_login import UserMixin, login_user, current_user
 
 tmpl_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
 app = Flask(__name__, template_folder=tmpl_dir)
+
+# Flask login manager
+login_manager = flask_login.LoginManager()
+login_manager.init_app(app)
+# Each flask-login session requires long random alphanumeric key to sign the session cookie
+app.secret_key = os.urandom(24)
+
 
 # ADD DATABASE CREDENTIALS HERE BEFORE RUNNING; DO NOT PUSH
 DATABASE_USERNAME = ""
@@ -57,6 +67,7 @@ def teardown_request(exception):
     except Exception as e:
         pass
 
+
 @app.route('/')
 def index():
     """
@@ -82,26 +93,83 @@ def index():
 
     # context = dict(data = names)
 
-    return render_template("index_1.html")
+    # Ensure user is logged in
+    if not current_user.is_authenticated:
+        return redirect(url_for('login'))
+
+    return render_template("index.html")
+
+###########################################
+# User authentication
+###########################################
+class User(UserMixin):
+    def __init__(self, username):
+        self.username = username
+
+    def get_id(self):
+        return self.username
 
 
-# Example of adding new data to the database
-@app.route('/add', methods=['POST'])
-def add():
-    # accessing form inputs from user
-    name = request.form['name']
-
-    # passing params in for each variable into query
-    params = {}
-    params["new_name"] = name
-    g.conn.execute(text('INSERT INTO test(name) VALUES (:new_name)'), params)
-    g.conn.commit()
-    return redirect('/')
+@login_manager.user_loader
+def user_loader(username):
+    user = User(username)
+    return user
 
 
-@app.route('/login')
+@login_manager.request_loader
+def request_loader(request):
+    username = request.form.get('username')
+    if username:
+        user = User(username)
+        user.id = username
+        return user
+    return None
+
+
+@login_manager.unauthorized_handler
+def unauthorized_handler():
+    return 'Unauthorized', 401
+
+
+@app.route('/login', methods=['GET', 'POST'])
 def login():
+    if flask.request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+
+        candidate_usernames_query = """SELECT DISTINCT Username FROM Candidate"""
+        candidate_usernames = [row[0] for row in g.conn.execute(text(candidate_usernames_query))]
+
+        recruiter_usernames_query = """SELECT DISTINCT Username FROM Recruiter"""
+        recruiter_usernames = [row[0] for row in g.conn.execute(text(recruiter_usernames_query))]
+
+        # If candidate, redirect to candidate view
+        if username in candidate_usernames:
+            user = User(username)
+
+            # Assume password is same as username
+            if password == username:
+                login_user(user)
+                return redirect(url_for('index'))
+            else:
+                return 'Invalid username or password'
+
+        # If recruiter, redirect to recruiter view
+        if username in recruiter_usernames:
+            user = User(username)
+            if password == username:
+                login_user(user)
+                return redirect(url_for('index'))
+            else:
+                return 'Invalid username or password'
+
+    return render_template('login.html')
+
+
+@app.route('/logout')
+def logout():
     pass
+
 
 @app.route('/job_board',methods=('GET','POST'))
 def job_board():
@@ -180,7 +248,7 @@ def job_board():
         postings = cursor.fetchall()
         cursor.close()
 
-        return render_template('job_board.html',postings=postings)
+        return render_template('job_board.html', postings=postings)
 
     # On GET or if no filter is applied, show all postings
     cursor = g.conn.execute(text(base_search_query))
@@ -283,9 +351,8 @@ def reviews():
                                FROM Review 
                                WHERE Company_Feedback IS NOT NULL"""
     interview_reviews = g.conn.execute(text(interview_reviews_query)).fetchall()
-    print(interview_reviews)
     company_reviews = g.conn.execute(text(company_reviews_query)).fetchall()
-    print(company_reviews)
+
     return render_template("reviews.html", interview_reviews=interview_reviews, company_reviews=company_reviews)
 
 
