@@ -81,25 +81,24 @@ def index():
 
     See its API: https://flask.palletsprojects.com/en/1.1.x/api/#incoming-request-data
     """
-
-    # DEBUG: this is debugging code to see what request looks like
-    print(request.args)
-
-    # example database query
-    # select_query = "SELECT username from candidate where username='pashlin0'"
-    # cursor = g.conn.execute(text(select_query))
-    # names = []
-    # for result in cursor:
-    #     names.append(result[0])
-    # cursor.close()
-
-    # context = dict(data = names)
-
-    # Ensure user is logged in
     if not current_user.is_authenticated:
         return redirect(url_for('login'))
 
-    return render_template("index.html")
+    username = current_user.username
+
+    candidate_check_query = """SELECT EXISTS(SELECT 1 FROM Candidate WHERE Username = :username)"""
+    is_candidate = g.conn.execute(text(candidate_check_query), {'username': username}).scalar()
+
+    recruiter_check_query = """SELECT EXISTS(SELECT 1 FROM Recruiter WHERE Username = :username)"""
+    is_recruiter = g.conn.execute(text(recruiter_check_query), {'username': username}).scalar()
+
+    if is_candidate:
+        return render_template('index_candidates.html')
+    elif is_recruiter:
+        return render_template('index_recruiters.html')
+    else:
+        return "Unauthorized access", 401
+
 
 ###########################################
 # User authentication
@@ -392,10 +391,27 @@ def applications():
         # Group by Job_ID before passing to template for distinct jobs to each get their own display table
         applications_data = [row._asdict() for row in g.conn.execute(text(applications_query), {'username': username})]
         grouped_applications = {k: list(v) for k, v in groupby(applications_data, key=itemgetter('job_id'))}
-        print(grouped_applications)
+
         return render_template('applications_recruiter.html', grouped_applications=grouped_applications)
 
     return "Unauthorized access", 401
+
+
+@app.route('/employees')
+def employees():
+    if not current_user.is_authenticated:
+        return redirect(url_for('login'))
+
+    employees_query = """SELECT e.*, c.Name as Company_Name
+                         FROM Employee e
+                         JOIN Company c ON e.Company_ID = c.Company_ID
+                      """
+    employees_result = g.conn.execute(text(employees_query)).fetchall()
+
+    return render_template("employee_directory.html", employees=employees_result)
+
+
+
 
 
 if __name__ == "__main__":

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Directory</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='review-styles.css') }}">
+</head>
+<body>
+    <h2>Employee Directory</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Job Title</th>
+                <th>Department</th>
+                <th>Company</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employees %}
+                <tr>
+                    <td>{{ employee[1] }}</td>
+                    <td>{{ employee[2] }}</td>
+                    <td>{{ employee[3] }}</td>
+                    <td>{{ employee[5] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
