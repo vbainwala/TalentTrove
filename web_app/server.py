@@ -22,8 +22,8 @@ app.secret_key = os.urandom(24)
 
 
 # ADD DATABASE CREDENTIALS HERE BEFORE RUNNING; DO NOT PUSH
-DATABASE_USERNAME = ""
-DATABASE_PASSWRD = ""
+DATABASE_USERNAME = "vb2589"
+DATABASE_PASSWRD = "18091303"
 DATABASE_HOST = "35.212.75.104"
 DATABASEURI = f"postgresql://{DATABASE_USERNAME}:{DATABASE_PASSWRD}@{DATABASE_HOST}/proj1part2"
 
@@ -305,33 +305,41 @@ def apply_for_job():
 
 @app.route('/post_job', methods=['GET', 'POST'])
 def post_job():
-    if request.method == 'POST':
+    if not current_user.is_authenticated:
+        return redirect(url_for('login'))
 
+    # Check if the current user is a recruiter
+    recruiter_check_query = """SELECT EXISTS(SELECT 1 FROM Recruiter WHERE Username = :username)"""
+    is_recruiter = g.conn.execute(text(recruiter_check_query), {'username': current_user.username}).scalar()
+    if not is_recruiter:
+        return "Unauthorized access", 401
+
+    # Automatically populate job ID, company ID, and recruiter username
+    job_id = generate_random_string()
+    company_id_query = "SELECT Company_ID FROM Recruiter WHERE Username = :username"
+    company_id_result = g.conn.execute(text(company_id_query), {'username': current_user.username}).fetchone()
+    company_id = company_id_result[0]
+    recruiter_username = current_user.username
+
+    if request.method == 'POST':
         # Collect form data
-        job_id = request.form['Job_ID']
         job_title = request.form['Job_Title']
         experience = request.form['Experience']
         location = request.form['Location']
         requirements = request.form['Requirements']
         skills = request.form['Skills']
-        company_id = request.form['Company_ID']
-        recruiter_username = request.form['Recruiter_Username']
         job_type = request.form['job_type']
 
-        # Look up the portal_id for the company entered and automatically link job with that portal
-        portal_query = """SELECT Portal_ID 
-                          FROM Job_Portal 
-                          WHERE Company_ID = :company_id
-        """
+        # Look up the portal_id for the company
+        portal_query = """SELECT Portal_ID FROM Job_Portal WHERE Company_ID = :company_id"""
         portal_result = g.conn.execute(text(portal_query), {'company_id': company_id}).fetchone()
         portal_id = portal_result[0]
 
-        # First add new role as row in Job_Posting table
+        # Add new role as row in Job_Posting table
         insert_query = """INSERT INTO Job_Posting (Job_ID, Job_Title, Experience, Location, Requirements, Skills, 
                           Company_ID, Recruiter_Username, Portal_ID)
                           VALUES (:job_id, :job_title, :experience, :location, :requirements, :skills, :company_id, 
-                          :recruiter_username, :portal_id)
-        """
+                          :recruiter_username, :portal_id)"""
         g.conn.execute(text(insert_query), {
             'job_id': job_id,
             'job_title': job_title,
@@ -343,10 +351,9 @@ def post_job():
             'recruiter_username': recruiter_username,
             'portal_id': portal_id
         })
-        # Need this to ensure transaction updates table
         g.conn.commit()
 
-        # Secondly also add other table specific information depending on if role is full time, internship, or coop job
+        # Add other table-specific information depending on the job type
         if job_type == 'full_time':
             annual_salary = request.form['AnnualSalary']
             insert_query = "INSERT INTO Full_Time_Job (Job_ID, AnnualSalary) VALUES (:job_id, :annual_salary)"
@@ -380,10 +387,9 @@ def post_job():
             })
             g.conn.commit()
 
-		# Redirect the recruiter back to the job_board after they've added the new role!
         return redirect(url_for('job_board'))
 
-    return render_template('post_job.html')
+    return render_template('post_job.html', job_id=job_id, company_id=company_id, recruiter_username=recruiter_username)
 
 
 @app.route('/reviews')

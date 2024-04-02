@@ -39,11 +39,8 @@
 </head>
 <body onload="showAdditionalFields()">
     <h2>Post a New Job</h2>
-    <!-- All Job fields here -->
+    <!-- All Job fields here to fill out here -->
     <form method="POST">
-        <label for="Job_ID">Job ID:</label>
-        <input type="text" id="Job_ID" name="Job_ID" required><br><br>
-
         <label for="Job_Title">Job Title:</label>
         <input type="text" id="Job_Title" name="Job_Title" required><br><br>
 
@@ -59,22 +56,14 @@
         <label for="Skills">Skills:</label>
         <input type="text" id="Skills" name="Skills" required><br><br>
 
-        <label for="Company_ID">Company ID:</label>
-        <input type="text" id="Company_ID" name="Company_ID" required><br><br>
-
-        <label for="Recruiter_Username">Recruiter Username:</label>
-        <input type="text" id="Recruiter_Username" name="Recruiter_Username" required><br><br>
-
         <label for="job_type">Job Type:</label>
         <select id="job_type" name="job_type" onchange="showAdditionalFields()">
+            <option value="full_time">Full Time</option>
+            <option value="internship">Internship</option>
+            <option value="coop">Co-op</option>
+        </select>
 
-        <option value="full_time">Full Time</option>
-        <option value="internship">Internship</option>
-        <option value="coop">Co-op</option>
-
-    </select>
-
-    <div id="additional_fields"></div>
+        <div id="additional_fields"></div>
         <input type="submit" value="Submit">
     </form>
 </body>
