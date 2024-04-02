@@ -1,6 +1,8 @@
 from crypt import methods
 import os
 import flask
+import secrets
+import string
 from sqlalchemy import *
 from sqlalchemy.pool import NullPool
 from flask import Flask, flash, request, render_template, g, redirect, Response, url_for
@@ -131,6 +133,10 @@ def request_loader(request):
 def unauthorized_handler():
     return 'Unauthorized', 401
 
+def generate_random_string(length=36):
+    alphabet = string.ascii_letters + string.digits
+    return ''.join(secrets.choice(alphabet) for _ in range(length))
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -172,15 +178,22 @@ def logout():
     pass
 
 
-@app.route('/job_board',methods=('GET','POST'))
+@app.route('/job_board', methods=('GET','POST'))
 def job_board():
+    # Only allow candidates to apply to jobs: check if candidate user
+    is_candidate = False
+    if current_user.is_authenticated:
+        candidate_check_query = """SELECT EXISTS(SELECT 1 FROM Candidate WHERE Username = :username)"""
+        is_candidate = g.conn.execute(text(candidate_check_query), {'username': current_user.username}).scalar()
+    else:
+        return redirect(url_for('login'))
 
     # Default query (i.e. what is executed if user does not select anything specific to filter by)
     base_search_query = """SELECT j.Job_ID, j.Job_Title, j.Experience, j.Location, j.Requirements, j.Skills, 
-                                   c.Name as Company_Name, r.Name as Recruiter_Name
-                                   FROM Job_Posting j
-                                   JOIN Company c ON j.Company_ID = c.Company_ID
-                                   JOIN Recruiter r ON j.Recruiter_Username = r.Username
+                               c.Name as Company_Name, r.Username as Recruiter_Username, r.Name as Recruiter_Name
+                               FROM Job_Posting j
+                               JOIN Company c ON j.Company_ID = c.Company_ID
+                               JOIN Recruiter r ON j.Recruiter_Username = r.Username
     """
     if request.method == "POST":
 
@@ -249,15 +262,46 @@ def job_board():
         postings = cursor.fetchall()
         cursor.close()
 
-        return render_template('job_board.html', postings=postings)
+        return render_template('job_board.html', postings=postings, is_candidate=is_candidate)
 
-    # On GET or if no filter is applied, show all postings
+    # if no filter is applied, show all postings
     cursor = g.conn.execute(text(base_search_query))
     postings = cursor.fetchall()
     cursor.close()
 
-    return render_template('job_board.html')
+    return render_template('job_board.html', postings=postings, is_candidate=is_candidate)
 
+
+@app.route('/apply', methods=['POST'])
+def apply_for_job():
+    application_id = generate_random_string()
+    job_id = request.form['job_id']
+    candidate_username = current_user.username
+    recruiter_username = request.form['recruiter_username']
+    resume = request.form['resume']
+    cover_letter = request.form['cover_letter']
+    status = 'Active'
+
+    # Add job application into Application table
+    insert_query = """INSERT INTO Application (Application_ID, Job_ID, Candidate_Username, Recruiter_Username, 
+                      Resume, Cover_Letter, Status)
+                      VALUES (:application_id, :job_id, :candidate_username, :recruiter_username, :resume, 
+                      :cover_letter, :status)
+                   """
+
+    g.conn.execute(text(insert_query), {
+        'application_id': application_id,
+        'job_id': job_id,
+        'candidate_username': candidate_username,
+        'recruiter_username': recruiter_username,
+        'resume': resume,
+        'cover_letter': cover_letter,
+        'status': status
+    })
+    # Need this to ensure transaction updates table
+    g.conn.commit()
+
+    return redirect(url_for('job_board'))
 
 @app.route('/post_job', methods=['GET', 'POST'])
 def post_job():
