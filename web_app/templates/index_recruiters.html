@@ -54,6 +54,17 @@
         }
     </script>
 
+    <button onclick="redirect_to_job_post()">Post Job</button>
+
+    <script>
+        function redirect_to_job_post() {
+            const currentURL = "{{ current_url }}"; // Flask passes the current URL here
+            // Example: appending a query parameter before redirecting
+            const redirectURL = currentURL + "/post_job";
+            window.location.href = redirectURL;
+        }
+    </script>
+
     <button onclick="redirect_to_employee()">Employee Directory</button>
 
     <script>
@@ -65,7 +76,7 @@
         }
     </script>
 
-    <button onclick="redirect_to_login()">Login</button>
+    <button onclick="redirect_to_login()">Logout</button>
 
     <script>
         function redirect_to_login() {

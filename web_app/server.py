@@ -391,6 +391,34 @@ def post_job():
 
     return render_template('post_job.html', job_id=job_id, company_id=company_id, recruiter_username=recruiter_username)
 
+@app.route('/post_review',methods=['GET','POST'])
+def post_review():
+    if not current_user.is_authenticated:
+        return redirect(url_for('login'))
+
+    username = current_user.username
+    review_id = generate_random_string()
+
+    if request.method=='POST':
+        feedback = request.form['Feedback']
+
+        # Case 1: user is a candidate, so show their applications only
+        candidate_check_query = """SELECT EXISTS(SELECT 1 FROM Candidate WHERE Username = :username)"""
+        is_candidate = g.conn.execute(text(candidate_check_query), {'username': username}).scalar()
+        if is_candidate:
+            feedback_query = """INSERT INTO Review (Review_ID, Company_Feedback, Candidate_username)
+                            VALUES (:review_id, :feedback,:username)"""
+            g.conn.execute(text(feedback_query), {
+                'review_id': review_id,
+                'feedback': feedback,
+                'username': username
+            })
+            g.conn.commit()
+
+            return redirect(url_for('reviews'))
+
+    return render_template('post_review.html')
+
 
 @app.route('/reviews')
 def reviews():

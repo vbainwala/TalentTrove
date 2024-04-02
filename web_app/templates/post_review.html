@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Post a Review</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h2>Post a New Review</h2>
+    <!-- All Review fields here to fill out here -->
+    <form method="POST">
+        <label for="Feedback">Feedback:</label>
+        <input type="text" id="Feedback" name="Feedback" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

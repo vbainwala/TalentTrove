@@ -52,7 +52,18 @@
         }
     </script>
 
-    <button onclick="redirect_to_login()">Login</button>
+    <button onclick="redirect_to_feedback()">Interview Feedback</button>
+
+    <script>
+        function redirect_to_feedback() {
+            const currentURL = "{{ current_url }}"; // Flask passes the current URL here
+            // Example: appending a query parameter before redirecting
+            const redirectURL = currentURL + "/post_review";
+            window.location.href = redirectURL;
+        }
+    </script>
+
+    <button onclick="redirect_to_login()">Logout</button>
 
     <script>
         function redirect_to_login() {
